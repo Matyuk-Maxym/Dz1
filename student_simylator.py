@@ -6,7 +6,7 @@ class Student:
 
         self.name = name
         self.gladness = 50
-        self.progress = 0
+        self.progress = 5
         self.money = 10
         self.alive = True
 
@@ -65,7 +65,7 @@ class Student:
             self.to_study()
         elif live_cube == 2:
             self.to_sleep()
-        elif self.to_work() == 3:
+        elif live_cube == 3:
             self.to_work()
         elif live_cube == 4:
             self.to_chill()
