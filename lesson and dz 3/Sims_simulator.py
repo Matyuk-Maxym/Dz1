@@ -2,14 +2,20 @@ import random
 
 
 class Human:
-    def __init__(self, name="Human", job=None, home=None, car=None):
+    def __init__(self, name="Human", job=None, home=None, car=None, education=None):
         self.name = name
         self.money = 100
         self.gladness = 50
         self.satiety = 10
+        self.experiense = 10
         self.job = job
         self.car = car
         self.home = home
+        self.education = education
+
+    def get_education(self):
+        self.experiense += 5
+        self.satiety -= 4
 
     def get_home(self):
         self.home = House()
@@ -49,6 +55,7 @@ class Human:
         self.money += self.job.salary
         self.gladness -= self.job.gladness_less
         self.satiety -= 4
+        self.experiense += 3
 
     def shopping(self, manage):
         if self.car.drive():
@@ -93,6 +100,7 @@ class Human:
         print(f"Money – {self.money}")
         print(f"Satiety – {self.satiety}")
         print(f"Gladness – {self.gladness}")
+        print(f"Education - {self.experiense}")
         home_indexes = "Home indexes"
         print(f"{home_indexes:^50}", "\n")
         print(f"Food – {self.home.food}")
@@ -127,7 +135,7 @@ class Human:
             print(f"I don't have a job, going to get a job {self.job.job} with salary {self.job.salary}")
         self.days_indexes(day)
 
-        dice = random.randint(1, 4)
+        dice = random.randint(1, 5)
         if self.satiety < 20:
             print("I'll go eat")
             self.eat()
@@ -156,6 +164,9 @@ class Human:
         elif dice == 4:
             print("Time for treats!")
             self.shopping(manage="delicacies")
+        elif dice == 5:
+            print("Time to study!")
+            self.get_education()
 
 
 class Auto:
@@ -180,6 +191,10 @@ class House:
     def __init__(self):
         self.mess = 10
         self.food = 10
+
+class Education:
+    def __init__(self):
+        self.experience = 10
 
 
 
