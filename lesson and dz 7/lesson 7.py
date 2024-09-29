@@ -59,8 +59,45 @@ def num_to_degrees(number, max_degree):
         yield number**i
         i += 1
 
+def number_to_degrees(number):
+    i = 0
+    while True:
+       result = number**i
+       yield result
+       if result > number ** 5:
+           return
+       i += 1
+
+
+
+
 res = num_to_degrees(int(input("num - ")), int(input("degree - ")))
 print(next(res))
 
 for num in res:
     print(num)
+
+print("-------------")
+
+res = number_to_degrees(10)
+
+
+for num in res:
+    print(num)
+
+# замикання функцій
+print("=============замикання функцій===========")
+
+class Helper:
+    def __init__(self, work):
+        self.work = work
+
+    def __call__(self, work):
+        return f"Self = {self.work}, no self = {work}"
+
+helper = Helper("Classwork")
+print(helper("homework"))
+
+# ========== decorators ===============
+print("========== decorators ===============")
+
