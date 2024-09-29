@@ -50,3 +50,17 @@ print(next(counter))
 print(next(counter))
 print(next(counter))
 
+print("======== genErator ========")
+# ======== generator ========
+
+def num_to_degrees(number, max_degree):
+    i = 0
+    for deg in range(max_degree):
+        yield number**i
+        i += 1
+
+res = num_to_degrees(int(input("num - ")), int(input("degree - ")))
+print(next(res))
+
+for num in res:
+    print(num)
