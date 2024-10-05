@@ -1,4 +1,4 @@
-My log message: 2024-09-29 11:23:18,547 - root - ERROR - ZeroDivisionError
+My log message: 2024-10-05 21:03:31,863 - root - ERROR - ZeroDivisionError
 Traceback (most recent call last):
   File "D:\Файли саши марти і макса\Папка Максима\Пайтон проекти 2024\pythonProject1\lesson and dz 8\lesson 8.py", line 21, in <module>
     print(5/0)
